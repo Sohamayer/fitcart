@@ -1,0 +1,73 @@
+:root{
+  /* Brand Colors */
+
+  --bg-primary: #0B0D12;
+  --bg-secondary: #12161F;
+
+  --surface: #171C26;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #AAB1C5;
+
+  --accent-purple: #7C3AED;
+  --accent-blue: #3B82F6;
+
+  --accent-gradient: linear-gradient(
+    90deg,
+    #7C3AED,
+    #3B82F6
+  );
+
+  --glass-border: rgba(255,255,255,0.08);
+
+  --container-width: 1400px;
+}
+
+/* Reset */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg-primary);
+  color:var(--text-primary);
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  min-height:100vh;
+
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:90%;
+  max-width:var(--container-width);
+  margin:auto;
+}
+
+html,
+body{
+  width:100%;
+  min-height:100%;
+}

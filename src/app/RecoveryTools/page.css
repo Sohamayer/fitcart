@@ -1,0 +1,1109 @@
+.recovery-page{
+
+    background:#0B0D12;
+
+    overflow:hidden;
+
+}
+
+/*=========================
+HERO
+=========================*/
+
+.recovery-hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:140px 7% 100px;
+
+    background-image:
+    url("https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600");
+
+    background-size:cover;
+
+    background-position:center;
+
+    overflow:hidden;
+
+}
+
+.recovery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+radial-gradient(
+    circle at center,
+    rgba(11,13,18,.55),
+    rgba(11,13,18,.88) 70%,
+    rgba(11,13,18,.95) 100%
+);
+
+}
+
+.recovery-overlay::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    left:-120px;
+
+    top:-120px;
+
+    border-radius:50%;
+
+    background:
+    rgba(124,58,237,.25);
+
+    filter:blur(90px);
+
+}
+
+.recovery-overlay::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+
+    height:360px;
+
+    right:-120px;
+
+    bottom:-120px;
+
+    border-radius:50%;
+
+    background:
+    rgba(59,130,246,.20);
+
+    filter:blur(90px);
+
+}
+
+.recovery-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    color:#D1D5DB;
+
+    font-size:.9rem;
+
+    margin-bottom:24px;
+
+}
+
+.recovery-content h1{
+
+    font-size:
+    clamp(3rem,7vw,5.7rem);
+
+    line-height:1.05;
+
+    color:#fff;
+
+    margin-bottom:28px;
+
+}
+
+.recovery-content h1 span{
+
+    display:block;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.recovery-content p{
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+    color:#CBD5E1;
+
+    line-height:1.9;
+
+    font-size:1.08rem;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+    padding:17px 34px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+    transform:
+    translateY(-3px);
+
+}
+
+.secondary-btn{
+
+    padding:17px 34px;
+
+    border-radius:999px;
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    color:#fff;
+
+    background:
+    rgba(255,255,255,.05);
+
+    transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+    background:
+    rgba(255,255,255,.10);
+
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+    .recovery-hero{
+
+        min-height:90vh;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .recovery-hero{
+
+        text-align:center;
+
+        padding:130px 24px 90px;
+
+    }
+
+    .recovery-content{
+
+        margin:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+        text-align:center;
+
+    }
+
+    .recovery-content p{
+
+        font-size:1rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .recovery-content h1{
+
+        font-size:2.8rem;
+
+    }
+
+    .hero-tag{
+
+        font-size:.82rem;
+
+    }
+
+}
+
+/*==================================
+SHOP BY RECOVERY
+==================================*/
+
+.recovery-category-section{
+
+    padding:110px 7%;
+
+    background:#fff;
+
+}
+
+.recovery-heading{
+
+    max-width:760px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.recovery-heading span{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    background:rgba(124,58,237,.08);
+
+    color:var(--accent-purple);
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.recovery-heading h2{
+
+    font-size:clamp(2.2rem,4vw,3.3rem);
+
+    color:#111827;
+
+    margin-bottom:20px;
+
+    line-height:1.2;
+
+}
+
+.recovery-heading p{
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+}
+
+.recovery-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.recovery-card{
+
+    position:relative;
+
+    height:420px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background-size:cover;
+
+    background-position:center;
+
+    transition:.4s;
+
+}
+
+.recovery-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.recovery-card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.78)
+    );
+
+}
+
+.recovery-card-content{
+
+    position:absolute;
+
+    left:30px;
+
+    right:30px;
+
+    bottom:30px;
+
+    z-index:2;
+
+}
+
+.recovery-card-content span{
+
+    color:#C4B5FD;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.recovery-card-content h3{
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin:12px 0;
+
+}
+
+.recovery-card-content p{
+
+    color:#E5E7EB;
+
+    line-height:1.7;
+
+    margin-bottom:24px;
+
+}
+
+.recovery-btn{
+
+    display:inline-block;
+
+    padding:13px 28px;
+
+    border-radius:999px;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    font-weight:600;
+
+}
+
+.massage{
+
+    background-image:url("/massage-gun.jpg");
+
+}
+
+.roller{
+
+    background-image:url("/foam-roller.jpg");
+
+}
+
+.bands{
+
+    background-image:url("/resistance-band.jpg");
+
+}
+
+.accessories{
+
+    background-image:url("/recovery-tools.jpg");
+
+}
+
+/*=========================
+Responsive
+=========================*/
+
+@media(max-width:768px){
+
+    .recovery-category-section{
+
+        padding:80px 24px;
+
+    }
+
+    .recovery-card{
+
+        height:360px;
+
+    }
+
+    .recovery-card-content{
+
+        left:22px;
+
+        right:22px;
+
+        bottom:22px;
+
+    }
+
+    .recovery-card-content h3{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+/*==================================
+FEATURED RECOVERY PRODUCTS
+==================================*/
+
+.recovery-products{
+
+    padding:110px 7%;
+
+    background:#F8FAFC;
+
+}
+
+.products-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(280px, 320px));
+
+    justify-content:center;
+
+    gap:32px;
+
+    margin-top:60px;
+
+}
+
+.product-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.product-image{
+
+    height:260px;
+
+    overflow:hidden;
+
+}
+
+.product-img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.product-card:hover .product-img{
+
+    transform:scale(1.08);
+
+}
+
+.product-info{
+
+    padding:20px;
+
+}
+
+.product-price{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:var(--accent-purple);
+
+    margin-bottom:12px;
+
+}
+
+.product-info h3{
+
+    font-size:1.15rem;
+
+    line-height: 1.4;
+
+    color:#111827;
+
+    margin-bottom:12px;
+
+}
+
+.description{
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+    margin-bottom:24px;
+
+}
+
+.product-btn{
+
+    display:inline-block;
+
+    padding:13px 26px;
+
+    border-radius:999px;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    font-weight:600;
+
+}
+
+@media(max-width:768px){
+
+    .recovery-products{
+
+        padding:80px 24px;
+
+    }
+
+}
+
+/*==================================
+RECOVERY BENEFITS
+==================================*/
+
+.recovery-benefits{
+
+    padding:110px 7%;
+
+    background:#ffffff;
+
+}
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.benefit-card{
+
+    padding:38px 32px;
+
+    background:#fff;
+
+    border:1px solid rgba(124,58,237,.08);
+
+    border-radius:22px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(124,58,237,.25);
+
+    box-shadow:
+    0 20px 45px rgba(124,58,237,.12);
+
+}
+
+.benefit-number{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:24px;
+
+    color:#fff;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+}
+
+.benefit-card h3{
+
+    font-size:1.35rem;
+
+    color:#111827;
+
+    margin-bottom:16px;
+
+}
+
+.benefit-card p{
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+}
+
+@media(max-width:768px){
+
+    .recovery-benefits{
+
+        padding:80px 24px;
+
+    }
+
+}
+
+/*==================================
+RECOVERY CTA
+==================================*/
+
+.recovery-cta{
+
+    padding:120px 7%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0B0D12,
+        #171C26
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.recovery-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        rgba(124,58,237,.18),
+        transparent 70%
+    );
+
+    top:-180px;
+    right:-150px;
+
+}
+
+.recovery-cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        rgba(59,130,246,.18),
+        transparent 70%
+    );
+
+    bottom:-150px;
+    left:-120px;
+
+}
+
+.cta-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.cta-content span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    color:var(--accent-blue);
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    margin-bottom:22px;
+
+}
+
+.cta-content h2{
+
+    font-size:clamp(2.2rem,5vw,3.8rem);
+
+    line-height:1.15;
+
+    color:#fff;
+
+    margin-bottom:24px;
+
+}
+
+.cta-content p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:#B6C2D2;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+.cta-buttons{
+
+    margin-top:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.cta-primary{
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    color:#fff;
+
+    font-weight:600;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    transition:.35s;
+
+}
+
+.cta-primary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.cta-secondary{
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.04);
+
+    transition:.35s;
+
+}
+
+.cta-secondary:hover{
+
+    background:rgba(255,255,255,.08);
+
+    transform:translateY(-4px);
+
+}
+
+@media(max-width:768px){
+
+    .recovery-cta{
+
+        padding:80px 24px;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .cta-primary,
+    .cta-secondary{
+
+        width:100%;
+        max-width:320px;
+        text-align:center;
+
+    }
+
+}
+
+/*==================================
+RECOVERY FAQ
+==================================*/
+
+.recovery-faq{
+
+    padding:110px 7%;
+
+    background:#ffffff;
+
+}
+
+.faq-grid{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+
+}
+
+.faq-card{
+
+    padding:34px;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    border:1px solid rgba(124,58,237,.12);
+
+    transition:.35s;
+
+    box-shadow:
+    0 12px 40px rgba(15,23,42,.05);
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--accent-purple);
+
+}
+
+.faq-card h3{
+
+    font-size:1.25rem;
+
+    color:#111827;
+
+    margin-bottom:18px;
+
+    line-height:1.4;
+
+}
+
+.faq-card p{
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+}
+
+@media(max-width:768px){
+
+    .recovery-faq{
+
+        padding:80px 24px;
+
+    }
+
+}

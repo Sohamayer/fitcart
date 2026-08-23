@@ -1,0 +1,1236 @@
+.supplements-page{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+/*=========================
+ HERO
+=========================*/
+
+.supplements-hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:140px 7% 100px;
+
+    background:
+    linear-gradient(
+        rgba(10,12,18,.18),
+        rgba(10,12,18,.55)
+    ),
+    url("/supplements-hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+.supplements-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:760px;
+
+    text-align:center;
+
+}
+
+.hero-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    background:
+    rgba(124,58,237,.12);
+
+    border:
+    1px solid rgba(124,58,237,.25);
+
+    color:var(--accent-purple);
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    margin-bottom:28px;
+
+    color: white;
+
+}
+
+.supplements-content h1{
+
+    font-size:
+    clamp(3rem,8vw,5.5rem);
+
+    line-height:1.05;
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+.supplements-content h1 span{
+
+    display:block;
+
+    margin-top:10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.supplements-content p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    font-size:1.12rem;
+
+    line-height:1.9;
+
+    color:var(--text-secondary);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:45px;
+
+}
+
+.primary-btn{
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 20px 40px
+    rgba(124,58,237,.35);
+
+}
+
+.secondary-btn{
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    color:white;
+
+    border:
+    1px solid
+    rgba(255,255,255,.15);
+
+    background:
+    rgba(255,255,255,.04);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+    background:
+    rgba(255,255,255,.08);
+
+    transform:translateY(-4px);
+
+}
+
+/*=========================
+ RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+    .supplements-hero{
+
+        min-height:90vh;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .supplements-hero{
+
+        padding:130px 6% 80px;
+
+    }
+
+    .supplements-content h1{
+
+        font-size:3rem;
+
+    }
+
+    .supplements-content p{
+
+        font-size:1rem;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:18px;
+
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:100%;
+
+        max-width:320px;
+
+        text-align:center;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .supplements-content h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .hero-tag{
+
+        font-size:.85rem;
+
+        padding:8px 18px;
+
+    }
+
+}
+
+/*=================================
+SHOP BY SUPPLEMENTS
+==================================*/
+
+.supplement-category-section{
+
+    padding:120px 7%;
+
+    background:#ffffff;
+
+}
+
+.supplement-heading{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.supplement-heading span{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    background:#F4F2FF;
+
+    color:var(--accent-purple);
+
+    font-weight:600;
+
+    margin-bottom:24px;
+
+}
+
+.supplement-heading h2{
+
+    font-size:clamp(2rem,5vw,3.3rem);
+
+    color:#121212;
+
+    margin-bottom:18px;
+
+    line-height:1.2;
+
+}
+
+.supplement-heading p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+.supplement-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.supplement-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:360px;
+
+    border-radius:28px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    background-size:cover;
+
+    background-position:center;
+
+    transition:.45s;
+
+}
+
+.supplement-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.protein{
+
+    background-image:url("/protein.jpg");
+
+}
+
+.creatine{
+
+    background-image:url("/creatine.jpg");
+
+}
+
+.preworkout{
+
+    background-image:url("/preworkout.jpg");
+
+}
+
+.recovery{
+
+    background-image:url("/vitamins.jpg");
+
+}
+
+.supplement-card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.82)
+    );
+
+}
+
+.supplement-card-content{
+
+    position:relative;
+
+    z-index:2;
+
+    padding:35px;
+
+}
+
+.supplement-card-content span{
+
+    color:#D8C8FF;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.supplement-card-content h3{
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin:12px 0;
+
+}
+
+.supplement-card-content p{
+
+    color:rgba(255,255,255,.88);
+
+    line-height:1.8;
+
+    margin-bottom:24px;
+
+}
+
+.supplement-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.supplement-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 18px 35px
+    rgba(124,58,237,.28);
+
+}
+
+/*========================
+TABLET
+========================*/
+
+@media(max-width:900px){
+
+    .supplement-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*========================
+MOBILE
+========================*/
+
+@media(max-width:768px){
+
+    .supplement-category-section{
+
+        padding:90px 6%;
+
+    }
+
+    .supplement-card{
+
+        min-height:320px;
+
+    }
+
+    .supplement-card-content{
+
+        padding:28px;
+
+    }
+
+    .supplement-card-content h3{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+/*=================================
+FEATURED PRODUCTS
+==================================*/
+
+.supplements-products{
+
+    padding:120px 7%;
+
+    background:#f8f9fc;
+
+}
+
+.products-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:70px;
+
+}
+
+.product-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.product-image{
+
+    background:#fff;
+
+    padding:35px;
+
+}
+
+.product-img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:contain;
+
+}
+
+.product-info{
+
+    padding:30px;
+
+}
+
+.product-price{
+
+    color:var(--accent-purple);
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.product-info h3{
+
+    color:#111;
+
+    font-size:1.4rem;
+
+    margin-bottom:14px;
+
+}
+
+.description{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:24px;
+
+}
+
+.product-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.product-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+@media(max-width:768px){
+
+    .supplements-products{
+
+        padding:90px 6%;
+
+    }
+
+}
+
+/*=====================================
+WHY CHOOSE FITCART
+======================================*/
+
+.supplement-benefits{
+
+    padding:120px 7%;
+
+    background:#ffffff;
+
+}
+
+.benefits-grid{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.benefit-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    border:1px solid #ececec;
+
+    transition:.35s;
+
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(124,58,237,.25);
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.08);
+
+}
+
+.benefit-number{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+}
+
+.benefit-card h3{
+
+    color:#111;
+
+    font-size:1.45rem;
+
+    margin-bottom:18px;
+
+}
+
+.benefit-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/*========================*/
+
+@media(max-width:1100px){
+
+    .benefits-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .supplement-benefits{
+
+        padding:90px 6%;
+
+    }
+
+    .benefits-grid{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+}
+
+/*======================================
+FITNESS GOALS
+======================================*/
+
+.fitness-goals{
+
+    padding:120px 7%;
+
+    background:#f8f9fc;
+
+}
+
+.goals-grid{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.goal-card{
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    border:1px solid rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+.goal-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(124,58,237,.2);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.goal-card h3{
+
+    font-size:1.6rem;
+
+    color:#121212;
+
+    margin-bottom:18px;
+
+}
+
+.goal-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/*========================*/
+
+@media(max-width:768px){
+
+    .fitness-goals{
+
+        padding:90px 6%;
+
+    }
+
+    .goals-grid{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+}
+
+/*==================================
+SUPPLEMENT GUIDE
+==================================*/
+
+.supplement-guide{
+
+    padding:120px 7%;
+
+    background:#ffffff;
+
+}
+
+.guide-grid{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.guide-step{
+
+    background:#fff;
+
+    border:1px solid rgba(124,58,237,.12);
+
+    border-radius:24px;
+
+    padding:42px 34px;
+
+    transition:.35s;
+
+}
+
+.guide-step:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(124,58,237,.35);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.08);
+
+}
+
+.step-number{
+
+    width:62px;
+    height:62px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:22px;
+
+    font-size:1.1rem;
+    font-weight:700;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+}
+
+.guide-step h3{
+
+    font-size:1.45rem;
+
+    margin-bottom:18px;
+
+    color: black;
+
+}
+
+.guide-step p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+/*========================*/
+
+@media(max-width:992px){
+
+    .guide-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .supplement-guide{
+
+        padding:90px 6%;
+
+    }
+
+    .guide-step{
+
+        padding:32px 24px;
+
+    }
+
+}
+
+/*======================================
+FINAL CTA
+======================================*/
+
+.supplement-cta{
+
+    padding:130px 7%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #10141f,
+        #171f30
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.supplement-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    left:-150px;
+    top:-150px;
+
+    border-radius:50%;
+
+    background:
+    rgba(124,58,237,.18);
+
+    filter:blur(90px);
+
+}
+
+.supplement-cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    right:-120px;
+    bottom:-120px;
+
+    border-radius:50%;
+
+    background:
+    rgba(59,130,246,.18);
+
+    filter:blur(90px);
+
+}
+
+.cta-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.cta-content span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#9ca3af;
+
+    font-weight:600;
+
+    margin-bottom:22px;
+
+}
+
+.cta-content h2{
+
+    font-size:clamp(2.3rem,5vw,4rem);
+
+    color:#fff;
+
+    line-height:1.2;
+
+    margin-bottom:24px;
+
+}
+
+.cta-content p{
+
+    color:#c9d0db;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.cta-primary,
+.cta-secondary{
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.cta-primary{
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--accent-purple),
+        var(--accent-blue)
+    );
+
+}
+
+.cta-primary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.cta-secondary{
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.cta-secondary:hover{
+
+    background:rgba(255,255,255,.1);
+
+}
+
+@media(max-width:768px){
+
+    .supplement-cta{
+
+        padding:90px 6%;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .cta-primary,
+    .cta-secondary{
+
+        width:100%;
+        max-width:320px;
+        text-align:center;
+
+    }
+
+}

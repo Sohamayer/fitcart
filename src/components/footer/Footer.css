@@ -1,0 +1,250 @@
+.footer{
+  position:relative;
+
+  background:
+  linear-gradient(
+    180deg,
+    #12161F,
+    #0B0D12
+  );
+
+  border-top:
+  1px solid var(--glass-border);
+
+  overflow:hidden;
+}
+
+/* Subtle Gradient Glow */
+
+.footer-glow{
+  position:absolute;
+
+  top:-150px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:500px;
+  height:500px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(124,58,237,.18),
+    transparent 70%
+  );
+
+  pointer-events:none;
+}
+
+/* Main Layout */
+
+.footer-container{
+  max-width:var(--container-width);
+
+  margin:auto;
+
+  padding:80px 4%;
+
+  display:grid;
+
+  grid-template-columns:
+  1.5fr
+  1fr
+  1fr
+  1fr;
+
+  gap:60px;
+}
+
+/* Logo */
+
+.footer-logo{
+  font-size:2rem;
+  font-weight:900;
+
+  color:var(--text-primary);
+
+  margin-bottom:20px;
+}
+
+.footer-logo span{
+  background:
+  linear-gradient(
+    90deg,
+    var(--accent-purple),
+    var(--accent-blue)
+  );
+
+  background-clip:text;
+  -webkit-background-clip:text;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+
+.footer-brand p{
+  color:var(--text-secondary);
+
+  line-height:1.8;
+
+  max-width:320px;
+}
+
+/* Columns */
+
+.footer-column{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.footer-column h3{
+  color:var(--text-primary);
+
+  margin-bottom:10px; 
+
+  font-size:1.05rem;
+}
+
+.footer-column a,
+.footer-column p{
+  color:var(--text-secondary);
+
+  transition:.3s ease;
+}
+
+.footer-column a:hover{
+  color:var(--text-primary);
+
+  transform:translateX(4px);
+}
+
+/* Bottom */
+
+.footer-bottom{
+  border-top:
+  1px solid var(--glass-border);
+
+  padding:25px;
+
+  text-align:center;
+}
+
+.footer-bottom p{
+  color:var(--text-secondary);
+
+  font-size:.9rem;
+}
+
+/* ======================
+   LARGE TABLETS
+====================== */
+
+@media (max-width: 1100px){
+
+  .footer-container{
+    grid-template-columns:
+    1fr
+    1fr;
+
+    gap:50px;
+  }
+
+}
+
+/* ======================
+   TABLETS
+====================== */
+
+@media (max-width: 768px){
+
+  .footer{
+    margin-top:80px;
+  }
+
+  .footer-container{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+    padding:60px 24px;
+  }
+
+  .footer-logo{
+    font-size:1.8rem;
+  }
+
+  .footer-brand p{
+    max-width:100%;
+  }
+
+  .footer-column{
+    gap:12px;
+  }
+
+  .footer-column h3{
+    margin-bottom:8px;
+  }
+
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 480px){
+
+  .footer{
+    margin-top:60px;
+  }
+
+  .footer-container{
+    padding:50px 20px;
+    gap:32px;
+  }
+
+  .footer-logo{
+    font-size:1.6rem;
+  }
+
+  .footer-brand p{
+    font-size:.95rem;
+    line-height:1.7;
+  }
+
+  .footer-column h3{
+    font-size:1rem;
+  }
+
+  .footer-column a,
+  .footer-column p{
+    font-size:.95rem;
+  }
+
+  .footer-bottom{
+    padding:20px;
+  }
+
+  .footer-bottom p{
+    font-size:.85rem;
+  }
+
+}
+
+/* ======================
+   EXTRA SMALL PHONES
+====================== */
+
+@media (max-width: 360px){
+
+  .footer-container{
+    padding:40px 16px;
+  }
+
+  .footer-logo{
+    font-size:1.45rem;
+  }
+
+}
