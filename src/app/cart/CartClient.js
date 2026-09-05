@@ -11,10 +11,6 @@ import {
 
 const CART_ID_KEY = "fitcart_cart_id";
 
-/**
- * Converts the raw Shopify cart (edges/node GraphQL shape, as returned by
- * lib/shopify.js -> getCart) into a flat, easy-to-render shape.
- */
 function normalizeCart(cart) {
   if (!cart || !cart.id) return null;
 
@@ -36,7 +32,6 @@ function normalizeCart(cart) {
         lineTotal: price * node.quantity,
       };
     })
-    // Defensive: a leftover zero/negative-quantity line should never render.
     .filter((line) => line.quantity > 0);
 
   const subtotal = lines.reduce((sum, line) => sum + line.lineTotal, 0);
@@ -66,11 +61,21 @@ export default function CartClient() {
   const [pendingLineId, setPendingLineId] = useState(null);
   const [error, setError] = useState(null);
 
-  // Fetches the authoritative cart from the GET route and normalizes it.
   const fetchCart = useCallback(async (cartId) => {
-    
     const res = await fetch(`/api/cart/${encodeURIComponent(cartId)}`);
     const json = await res.json();
+
+    // TEMPORARY DEBUG — tells us exactly which cart ID this is and the
+    // raw price Shopify returned for its first line, so we can confirm
+    // whether this is a brand new cart or a reused stale one.
+    console.log("=== CART DEBUG ===");
+    console.log("cartId param:", cartId);
+    console.log("Actual cart.id from Shopify:", json.cart?.id);
+    console.log(
+      "Raw first line merchandise.price.amount:",
+      json.cart?.lines?.edges?.[0]?.node?.merchandise?.price?.amount
+    );
+    console.log("Full response:", JSON.stringify(json, null, 2));
 
     if (!json.success || !json.cart) {
       return null;
@@ -79,8 +84,6 @@ export default function CartClient() {
     return normalizeCart(json.cart);
   }, []);
 
-  // isLoading already starts `true` (see useState above), so this function
-  // never needs to set it true again — only false, once we have an answer.
   const loadCart = useCallback(async () => {
     const cartId =
       typeof window !== "undefined"
@@ -96,16 +99,11 @@ export default function CartClient() {
       const normalized = await fetchCart(cartId);
 
       if (!normalized) {
-        // cartId was stale/invalid (e.g. expired Shopify cart) — clear it
-        // and fall back to the normal empty-cart view, no error needed.
         localStorage.removeItem(CART_ID_KEY);
       }
 
       setCart(normalized);
     } catch (err) {
-      // Fetch itself failed (network error, bad response, etc). Log for
-      // debugging, but don't show a scary banner for what the user
-      // experiences as simply "an empty cart".
       console.error("Failed to load cart:", err);
       localStorage.removeItem(CART_ID_KEY);
       setCart(null);
@@ -115,10 +113,6 @@ export default function CartClient() {
   }, [fetchCart]);
 
   useEffect(() => {
-    // Known false-positive: react-hooks/set-state-in-effect flags this call
-    // because loadCart's early-return branch (no cartId in localStorage)
-    // sets state with nothing to await first — there's genuinely no cart to
-    // fetch in that case. Tracked upstream: https://github.com/react/react/issues/34743
     // eslint-disable-next-line react-hooks/set-state-in-effect
     loadCart();
   }, [loadCart]);
@@ -143,8 +137,6 @@ export default function CartClient() {
       const json = await res.json();
       if (!json.success) throw new Error(json.message);
 
-      // The update mutation only returns { id, totalQuantity }, so refetch
-      // the full cart to get the new prices/subtotal.
       const refreshed = await fetchCart(cart.id);
       setCart(refreshed);
     } catch (err) {
@@ -199,8 +191,6 @@ export default function CartClient() {
 
       window.location.href = cart.checkoutUrl;
     } catch (err) {
-      // If the session check itself glitches, don't block a paying
-      // customer over it — just let checkout proceed.
       window.location.href = cart.checkoutUrl;
     }
   };
@@ -210,7 +200,6 @@ export default function CartClient() {
   return (
     <section className="cart-section">
       <div className="cart-container">
-        {/* LEFT */}
         <div className="cart-table">
           {isLoading && (
             <div className="cart-loading">
@@ -224,14 +213,11 @@ export default function CartClient() {
               <div className="empty-icon">
                 <FiShoppingCart />
               </div>
-
               <h2>Your Cart Is Empty</h2>
-
               <p>
                 Looks like you haven&apos;t added any fitness equipment
                 yet.
               </p>
-
               <Link href="/products" className="continue-btn">
                 Continue Shopping
               </Link>
@@ -278,9 +264,7 @@ export default function CartClient() {
                       >
                         <FiMinus />
                       </button>
-
                       <span className="qty-value">{line.quantity}</span>
-
                       <button
                         type="button"
                         className="qty-btn"
@@ -318,30 +302,24 @@ export default function CartClient() {
           )}
         </div>
 
-        {/* RIGHT */}
         <aside className="cart-summary">
           <h3>Order Summary</h3>
-
           <div className="summary-row">
             <span>Subtotal</span>
             <span>{formatPrice(cart?.subtotal || 0)}</span>
           </div>
-
           <div className="summary-row">
             <span>Shipping</span>
             <span>Free</span>
           </div>
-
           <div className="summary-row">
             <span>GST (18%)</span>
             <span>{formatPrice(cart?.gst || 0)}</span>
           </div>
-
           <div className="summary-total">
             <span>Total</span>
             <span>{formatPrice(cart?.total || 0)}</span>
           </div>
-
           <button
             className="checkout-btn"
             disabled={isEmpty || !cart?.checkoutUrl}

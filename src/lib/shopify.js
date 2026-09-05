@@ -75,10 +75,14 @@ async function shopifyFetch(
 
 }
 
+// Forces every request to resolve prices against the India market,
+// regardless of the server's actual IP location (Vercel's servers aren't
+// in India, so without this Shopify was silently pricing against a
+// different default market).
 export async function getProducts() {
 
   const query = `
-  {
+  query @inContext(country: IN) {
     products(first: 50) {
       edges {
         node {
@@ -128,7 +132,7 @@ export async function getProducts() {
 export async function getCollectionProducts(handle) {
 
   const query = `
-  {
+  query @inContext(country: IN) {
     collection(handle: "${handle}") {
 
       title
@@ -196,6 +200,9 @@ export async function createCart(
               quantity: 1
             }
           ]
+          buyerIdentity: {
+            countryCode: IN
+          }
         }
       ) {
         cart {
@@ -389,7 +396,7 @@ export async function removeCartLine(
 export async function getProduct(handle) {
 
   const query = `
-  {
+  query @inContext(country: IN) {
     product(handle:"${handle}") {
       id
       title
